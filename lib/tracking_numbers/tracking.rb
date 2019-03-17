@@ -1,4 +1,6 @@
 class TrackingNumbers::Tracking
+  
+  attr_accessor :carrier, :status, :origin, :destination
 
   def self.status
     self.scrape_trackingUpdate
@@ -18,10 +20,14 @@ class TrackingNumbers::Tracking
     
     TrackingNumbers.each do |i|
         doc = Nokogiri::HTML(open("https://t.17track.net/en#nums=" +i))
-        tracking.carrier = doc.search("i.title").text.strip 
-        tracking.status =doc.search("<span.data-newevents=").text.strip
-        tracking.origin =doc.search("<span.Origin").text.strip
-        tracking.destination = doc.search("<span.Destination").text.strip
-
+        update.carrier = doc.search("i.title").text.strip 
+        update.status =doc.search("<span.data-newevents=").text.strip
+        update.origin =doc.search("<span.Origin").text.strip
+        update.destination = doc.search("<span.Destination").text.strip
+        
+       update
+      end
+  end
+  
   
 end
