@@ -1,5 +1,4 @@
 require "tracking_numbers/version"
-require "tracking_numbers/version"
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
