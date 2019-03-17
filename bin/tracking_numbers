@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "tracking_numbers"
+require './lib/tracking_numbers'
 
 TrackingNumbers:: CLI.new.call
